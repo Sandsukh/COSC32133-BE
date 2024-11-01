@@ -49,4 +49,13 @@ public class EmployeeController {
         return new ResponseEntity<String>("Employee deleted Successfully.",HttpStatus.OK);
     }
 
+    @GetMapping("/firstname/{firstName}")
+    //http://localhost:8080/api/employees/firstname/{firstName}
+    public ResponseEntity<List<Employee>> 
+    getEmployeeByFirstName(@PathVariable("firstName") String firstName) {
+    List<Employee> employees = employeeService.getEmployeeByFirstName(firstName);
+    return new ResponseEntity<>(employees, HttpStatus.OK);
+    }
+
+
 }
