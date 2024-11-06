@@ -60,4 +60,14 @@ public class EmployeeServiceImpl implements EmployeeService {
         //delete
         employeeRepsitory.deleteById(id);
     }
+
+    @Override
+    public List<Employee> getEmployeeByFirstName(String firstName) {
+    return employeeRepsitory.findByFirstName(firstName);
+    }
+    @Override
+    public List<String> getEmailByFirstName(String firstName) {
+    return employeeRepsitory.findEmailByFirstName(firstName);
+    }
+
 }

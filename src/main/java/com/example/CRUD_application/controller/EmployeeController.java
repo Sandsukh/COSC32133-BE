@@ -49,4 +49,21 @@ public class EmployeeController {
         return new ResponseEntity<String>("Employee deleted Successfully.",HttpStatus.OK);
     }
 
+    @GetMapping("/firstname/{firstName}")
+    //http://localhost:8080/api/employees/firstname/{firstName}
+    public ResponseEntity<List<Employee>> 
+    getEmployeeByFirstName(@PathVariable("firstName") String firstName) {
+    List<Employee> employees = employeeService.getEmployeeByFirstName(firstName);
+    return new ResponseEntity<>(employees, HttpStatus.OK);
+    }
+
+    @GetMapping("/firstname/email/{firstName}")
+    //http://localhost:8080/api/employees/firstname/email/{firstName}
+    public ResponseEntity<List<String>> 
+    getEmailByFirstName(@PathVariable("firstName") String firstName) {
+    List<String> emails = employeeService.getEmailByFirstName(firstName);
+    return new ResponseEntity<>(emails, HttpStatus.OK);
+    }
+
+
 }
