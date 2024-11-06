@@ -57,5 +57,13 @@ public class EmployeeController {
     return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 
+    @GetMapping("/firstname/email/{firstName}")
+    //http://localhost:8080/api/employees/firstname/email/{firstName}
+    public ResponseEntity<List<String>> 
+    getEmailByFirstName(@PathVariable("firstName") String firstName) {
+    List<String> emails = employeeService.getEmailByFirstName(firstName);
+    return new ResponseEntity<>(emails, HttpStatus.OK);
+    }
+
 
 }

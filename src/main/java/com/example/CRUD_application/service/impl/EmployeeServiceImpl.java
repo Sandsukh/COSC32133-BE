@@ -65,5 +65,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<Employee> getEmployeeByFirstName(String firstName) {
     return employeeRepsitory.findByFirstName(firstName);
     }
+    @Override
+    public List<String> getEmailByFirstName(String firstName) {
+    return employeeRepsitory.findEmailByFirstName(firstName);
+    }
 
 }
